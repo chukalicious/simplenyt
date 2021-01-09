@@ -29,12 +29,12 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [topic]);
   return (
     <div className="App">
       <Header />
       <SearchBar getTopic={getTopic} />
-      <Display />
+      <Display news={news} />
     </div>
   );
 }

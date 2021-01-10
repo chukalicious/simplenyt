@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import {
   Article,
   NewsPage,
@@ -22,26 +21,20 @@ const Display = (props) => {
       ) : (
         <Wrapper>
           {props.news.map((article) => (
-            <a
-              key={article.url}
-              href={article.url}
-              style={{ textDecoration: "none" }}
-            >
-              <Article>
-                <ImageContainer>
-                  {article.multimedia.map((img) =>
-                    img.format.toLowerCase().includes("thumbnail") ? (
-                      <img src={img.url} />
-                    ) : null
-                  )}
-                </ImageContainer>
-                <ArticleTitle>{article.title} </ArticleTitle>
-                <p>section: {article.section}</p>
-                <p>{article.abstract}</p>
-                <p>{article.byline}</p>
-                <p>published on: {article.published_date}</p>
-              </Article>
-            </a>
+            <Article>
+              <ImageContainer>
+                {article.multimedia.map((img) =>
+                  img.format.toLowerCase().includes("thumbnail") ? (
+                    <img src={img.url} />
+                  ) : null
+                )}
+              </ImageContainer>
+              <ArticleTitle>{article.title} </ArticleTitle>
+              <p>section: {article.section}</p>
+              <p>{article.abstract}</p>
+              <p>{article.byline}</p>
+              <p>published on: {article.published_date}</p>
+            </Article>
           ))}
         </Wrapper>
       )}

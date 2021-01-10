@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button, MenuItem } from "@material-ui/core";
+import { SelectorDiv, SelectForm, EnterButton } from "../styles";
 
 const SearchBar = (props) => {
   const [selection, setSelection] = useState("");
@@ -10,10 +12,17 @@ const SearchBar = (props) => {
     props.getTopic(selection);
   };
   return (
-    <div>
-      <form onSubmit={handleClick}>
-        <label htmlFor="select">Choose a topic: </label>
-        <select id="topics" value={selection} onChange={handleChange}>
+    <SelectorDiv>
+      <form
+        style={{ margin: "2rem auto", fontSize: "1.5rem" }}
+        onSubmit={handleClick}
+      >
+        <select
+          style={{ height: "2.5rem", fontSize: "1.2rem" }}
+          id="topics"
+          value={selection}
+          onChange={handleChange}
+        >
           <option selected value="select">
             --Select a Topic--
           </option>
@@ -46,9 +55,9 @@ const SearchBar = (props) => {
           </option>
           <option value="world">World</option>
         </select>
-        <button>enter</button>
+        <EnterButton>enter</EnterButton>
       </form>
-    </div>
+    </SelectorDiv>
   );
 };
 

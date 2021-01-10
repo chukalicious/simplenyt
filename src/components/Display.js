@@ -43,7 +43,9 @@ const Display = (props) => {
                   ) : null
                 )}
               </ImageContainer>
-              <ArticleTitle>{article.title} </ArticleTitle>
+              <a style={{ color: "black" }} href={article.url}>
+                <ArticleTitle>{article.title}</ArticleTitle>
+              </a>
               <p
                 style={{
                   marginTop: "-1rem",

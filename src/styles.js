@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const NewsPage = styled.div`
   display: flex;
   flex-direction: column;
-  border: blue solid;
   padding-left: 1.5rem;
 `;
 export const TitleDiv = styled.div`
@@ -26,9 +25,17 @@ export const Wrapper = styled.div`
   justify-content: center;
 `;
 export const ImageContainer = styled.div`
-  border: orange solid;
+  display flex; 
+`;
+export const Image = styled.img`
+  width: 50%;
+`;
+export const ByLine = styled.p`
+  text-align: right;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
 `;
 export const ArticleTitle = styled.h3`
-  color: red;
-  border: red solid;
+  text-align: left;
 `;

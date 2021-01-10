@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 const SearchBar = (props) => {
-  console.log("props in the SearchBar", props);
   const [selection, setSelection] = useState("");
-  console.log("selection", selection);
   const handleChange = (e) => {
     setSelection(e.target.value);
   };
@@ -13,11 +11,12 @@ const SearchBar = (props) => {
   };
   return (
     <div>
-      <h1>SearchBar</h1>
       <form onSubmit={handleClick}>
-        {/* <input onChange={handleChange} value={selection} /> */}
-        <label htmlFor="select">Select a topic: </label>
+        <label htmlFor="select">Choose a topic: </label>
         <select id="topics" value={selection} onChange={handleChange}>
+          <option selected value="select">
+            --Select a Topic--
+          </option>
           <option value="arts">Arts</option>
           <option value="automobiles">Automobiles</option>
           <option value="books">Books</option>

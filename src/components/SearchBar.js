@@ -12,7 +12,6 @@ const SearchBar = (props) => {
   return (
     <div>
       <form onSubmit={handleClick}>
-        {/* <input onChange={handleChange} value={selection} /> */}
         <label htmlFor="select">Choose a topic: </label>
         <select id="topics" value={selection} onChange={handleChange}>
           <option selected value="select">

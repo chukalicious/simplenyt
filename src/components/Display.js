@@ -1,5 +1,13 @@
 import React from "react";
-import { Article, NewsPage, TitleDiv } from "../styles";
+import { Link } from "react-router-dom";
+import {
+  Article,
+  NewsPage,
+  TitleDiv,
+  Wrapper,
+  ArticleTitle,
+  ImageContainer,
+} from "../styles";
 
 const Display = (props) => {
   console.log("props in the Display", props);
@@ -12,18 +20,30 @@ const Display = (props) => {
       {props.loading ? (
         <h1>Loading...</h1>
       ) : (
-        <div>
+        <Wrapper>
           {props.news.map((article) => (
-            <Article key={article.url}>
-              <h3>{article.title} </h3>
-              <p>section: {article.section}</p>
-              <p>{article.abstract}</p>
-              <p>{article.byline}</p>
-              {/* name to change format on date */}
-              <p>published on: {article.published_date}</p>
-            </Article>
+            <a
+              key={article.url}
+              href={article.url}
+              style={{ textDecoration: "none" }}
+            >
+              <Article>
+                <ImageContainer>
+                  {article.multimedia.map((img) =>
+                    img.format.toLowerCase().includes("thumbnail") ? (
+                      <img src={img.url} />
+                    ) : null
+                  )}
+                </ImageContainer>
+                <ArticleTitle>{article.title} </ArticleTitle>
+                <p>section: {article.section}</p>
+                <p>{article.abstract}</p>
+                <p>{article.byline}</p>
+                <p>published on: {article.published_date}</p>
+              </Article>
+            </a>
           ))}
-        </div>
+        </Wrapper>
       )}
     </NewsPage>
   );

@@ -8,7 +8,6 @@ import { apiKey } from "./keys";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
   const [topic, setTopic] = useState("");
   const getTopic = (term) => {
     setTopic(term);
@@ -32,7 +31,7 @@ function App() {
       });
   }, [topic]);
   return (
-    <div className="App">
+    <div>
       <Header />
       <SearchBar getTopic={getTopic} />
       <Display news={news} loading={isLoading} />

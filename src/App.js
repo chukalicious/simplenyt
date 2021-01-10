@@ -9,7 +9,7 @@ import { apiKey } from "./keys";
 function App() {
   //get topic from user input on the SearchBar
   const [topic, setTopic] = useState("");
-  console.log("topic", topic);
+  console.log("topic in the App.js: ", topic);
   const getTopic = (term) => {
     setTopic(term);
   };

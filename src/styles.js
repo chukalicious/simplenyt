@@ -39,3 +39,19 @@ export const ByLine = styled.p`
 export const ArticleTitle = styled.h3`
   text-align: left;
 `;
+
+export const SelectorDiv = styled.div`
+  display: flex;
+  height: 15vh;
+  margin: 0 auto;
+  font-weight: bold;
+`;
+
+export const EnterButton = styled.button`
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border: solid 0.5px lightgray;
+  border-radius: 2px;
+  text-transform: capitalize;
+`;

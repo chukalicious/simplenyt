@@ -3,7 +3,7 @@ import React from "react";
 const Header = () => {
   return (
     <div>
-      <h1>Headlines</h1>
+      <h1 style={{ textAlign: "center" }}>Headlines</h1>
     </div>
   );
 };

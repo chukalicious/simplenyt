@@ -9,7 +9,6 @@ import {
   ImageContainer,
   Image,
   ByLine,
-  TopCard,
 } from "../styles";
 
 const Display = (props) => {
@@ -31,35 +30,37 @@ const Display = (props) => {
         />
       ) : (
         <Wrapper>
-          {props.news.map((article) => (
-            <Article>
-              <ImageContainer>
-                {article.multimedia.map((img) =>
-                  img.format.toLowerCase().includes("thumbnail") ? (
-                    <>
-                      <Image src={img.url} />
-                      <ByLine>{article.byline}</ByLine>
-                    </>
-                  ) : null
-                )}
-              </ImageContainer>
-              <a style={{ color: "black" }} href={article.url}>
-                <ArticleTitle>{article.title}</ArticleTitle>
-              </a>
-              <p
-                style={{
-                  marginTop: "-1rem",
-                  fontStyle: "italic",
-                  textTransform: "capitalize",
-                }}
-              >
-                Section: {article.section}
-              </p>
-              <p>{article.abstract}</p>
-              <p style={{ textTransform: "capitalize" }}>
-                published on: {article.published_date}
-              </p>
-            </Article>
+          {props.news.map((article, i) => (
+            <div key={i}>
+              <Article>
+                <ImageContainer>
+                  {article.multimedia.map((img, i) =>
+                    img.format.toLowerCase().includes("thumbnail") ? (
+                      <div key={i}>
+                        <Image src={img.url} />
+                        <ByLine>{article.byline}</ByLine>
+                      </div>
+                    ) : null
+                  )}
+                </ImageContainer>
+                <a style={{ color: "black" }} href={article.url}>
+                  <ArticleTitle>{article.title}</ArticleTitle>
+                </a>
+                <p
+                  style={{
+                    marginTop: "-1rem",
+                    fontStyle: "italic",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  Section: {article.section}
+                </p>
+                <p>{article.abstract}</p>
+                <p style={{ textTransform: "capitalize" }}>
+                  published on: {article.published_date}
+                </p>
+              </Article>
+            </div>
           ))}
         </Wrapper>
       )}

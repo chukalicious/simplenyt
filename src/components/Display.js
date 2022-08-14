@@ -43,7 +43,12 @@ const Display = (props) => {
                     ) : null
                   )}
                 </ImageContainer>
-                <a style={{ color: "black" }} href={article.url}>
+                <a
+                  style={{ color: "black" }}
+                  href={article.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <ArticleTitle>{article.title}</ArticleTitle>
                 </a>
                 <p

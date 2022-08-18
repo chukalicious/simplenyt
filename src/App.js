@@ -1,5 +1,9 @@
 import "./App.css";
-import { useEffect, useState, useDispatch } from "react";
+import {
+  useEffect,
+  useState,
+  // useDispatch
+} from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Display from "./components/Display";

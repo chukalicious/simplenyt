@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { Button, MenuItem } from "@material-ui/core";
-import { SelectorDiv, SelectForm, EnterButton } from "../styles";
+// import { Button, MenuItem } from "@material-ui/core";
+import {
+  SelectorDiv,
+  // SelectForm,
+  EnterButton,
+} from "../styles";
 
 const SearchBar = (props) => {
   const [selection, setSelection] = useState("");

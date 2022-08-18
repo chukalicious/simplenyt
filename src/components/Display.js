@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Loader from "react-loader-spinner";
 import {
   Article,
@@ -13,8 +13,17 @@ import {
 
 const Display = (props) => {
   console.log("props in the Display", props);
+
+  const [user, setUser] = useState("");
+  console.log("Display: user:", user);
+
+  useEffect(() => {
+    setUser(props.userName);
+  }, [props]);
+
   return (
     <NewsPage>
+      {user.length > 1 ? <p>welcome, {user}</p> : null}
       <TitleDiv>
         <h1>Top Stories</h1>
         <h2>from the NYT</h2>

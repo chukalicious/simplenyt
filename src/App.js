@@ -3,12 +3,15 @@ import { useEffect, useState, useDispatch } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import Display from "./components/Display";
+import NameForm from "./components/NameForm";
 import axios from "axios";
 import { apiKey } from "./keys";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [topic, setTopic] = useState("");
+  const [name, setName] = useState("");
+  console.log("App.js: name: ", name);
   const getTopic = (term) => {
     setTopic(term);
   };
@@ -33,8 +36,9 @@ function App() {
   return (
     <div>
       <Header />
+      <NameForm getName={setName} />
       <SearchBar getTopic={getTopic} />
-      <Display news={news} loading={isLoading} />
+      <Display news={news} loading={isLoading} userName={name} />
     </div>
   );
 }
